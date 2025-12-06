@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const instagramService = require('../services/instagramService');
 const calculateEngagement = require('../services/engagementCalculator');
+const Profile = require('../models/Profile');
 
 router.get('/:username', async (req, res) => {
     try {
@@ -58,6 +59,40 @@ router.get('/:username', async (req, res) => {
                 }
             }
         };
+
+        // 4. Persistence (Save to MongoDB)
+        try {
+            const profileDoc = await Profile.findOneAndUpdate(
+                { username: rawData.username },
+                {
+                    username: rawData.username,
+                    full_name: rawData.full_name,
+                    biography: rawData.biography,
+                    followers: rawData.followers,
+                    following: rawData.following,
+                    profile_pic_url: rawData.profile_pic_url,
+                    is_verified: rawData.is_verified,
+                    external_url: rawData.external_url,
+                    email: rawData.email,
+                    last_updated: Date.now(),
+                    $push: {
+                        engagement_snapshots: {
+                            engagement_rate: engagementMetrics.rate,
+                            avg_likes: engagementMetrics.average_likes,
+                            avg_comments: engagementMetrics.average_comments,
+                            time_window: `${from_date || 'all'} to ${to_date || 'now'}`
+                        }
+                    }
+                },
+                { new: true, upsert: true }
+            );
+            response.db_status = "Saved to MongoDB";
+            response.db_id = profileDoc._id;
+        } catch (dbErr) {
+            console.error("DB Save Error:", dbErr.message);
+            response.db_status = "Failed to save to DB (Connection Error?)";
+            // Do not fail the request, just note it
+        }
 
         res.json(response);
 
