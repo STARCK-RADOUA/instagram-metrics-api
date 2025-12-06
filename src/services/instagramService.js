@@ -1,3 +1,6 @@
+require('dotenv').config();
+
+
 const axios = require('axios');
 
 // NOTE: In a real production environment, this would use Puppeteer 
