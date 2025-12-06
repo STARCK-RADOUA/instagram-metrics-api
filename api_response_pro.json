@@ -1,0 +1,111 @@
+{
+    "profile": {
+        "username": "tech_guru_pro",
+        "full_name": "Tech Reviews & Insights",
+        "biography": "Ultimate source for tech news. 📧 business@techguru.com",
+        "followers": 1254300,
+        "following": 450,
+        "profile_pic_url": "https://ui-avatars.com/api/?name=Tech+Guru&background=0D8ABC&color=fff&size=256",
+        "is_verified": true,
+        "external_url": "https://youtube.com/techguru"
+    },
+    "metrics": {
+        "engagement_rate": "3.250%",
+        "average_likes": 38000,
+        "average_comments": 650,
+        "analyzed_post_count": 25,
+        "time_window": {
+            "from": "beginning",
+            "to": "now"
+        }
+    },
+    "audience_insights": {
+        "demographics": {
+            "age_split": {
+                "13-17": 0.05,
+                "18-24": 0.25,
+                "25-34": 0.45,
+                "35-44": 0.2,
+                "45-54": 0.04,
+                "55+": 0.01
+            },
+            "gender_split": {
+                "male": 0.65,
+                "female": 0.35
+            },
+            "top_countries": [
+                {
+                    "country": "United States",
+                    "percentage": 0.4
+                },
+                {
+                    "country": "United Kingdom",
+                    "percentage": 0.15
+                },
+                {
+                    "country": "Canada",
+                    "percentage": 0.1
+                },
+                {
+                    "country": "India",
+                    "percentage": 0.08
+                }
+            ],
+            "top_cities": [
+                {
+                    "city": "New York",
+                    "percentage": 0.12
+                },
+                {
+                    "city": "London",
+                    "percentage": 0.08
+                },
+                {
+                    "city": "Los Angeles",
+                    "percentage": 0.06
+                }
+            ]
+        },
+        "credibility": {
+            "fake_followers": 0.12,
+            "real_followers": 0.88,
+            "mass_followers": 0.05
+        },
+        "brand_affinity": [
+            "Apple",
+            "Sony",
+            "Tesla",
+            "Adobe"
+        ],
+        "interests": [
+            "Consumer Electronics",
+            "Software",
+            "Photography",
+            "Gaming"
+        ]
+    },
+    "posts": [
+        {
+            "id": "post_1000",
+            "media_type": "carousel",
+            "caption": "Reviewing the new device! #tech #review #0",
+            "likes": 32345,
+            "comments": 412,
+            "engagement_rate": 2.61,
+            "timestamp": "2025-10-06T18:45:00.000Z"
+        },
+        {
+            "id": "post_1001",
+            "media_type": "video",
+            "caption": "Reviewing the new device! #tech #review #1",
+            "likes": 28900,
+            "comments": 340,
+            "engagement_rate": 2.33,
+            "timestamp": "2025-10-03T18:45:00.000Z"
+        }
+    ],
+    "field_availability_report": {
+        "status": "enriched",
+        "source": "database_cache"
+    }
+}
